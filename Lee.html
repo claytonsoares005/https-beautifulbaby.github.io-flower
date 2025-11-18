@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Babaluuu🌸</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #ffeef8, #fbd5ff, #f3e8ff);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .flower-wrapper {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    .flower {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      transition: transform 0.4s ease;
+    }
+
+    .flower.clicked {
+      transform: scale(1.06) rotate(3deg);
+    }
+
+    .petal {
+      --i: 0;
+      position: absolute;
+      width: 70px;
+      height: 120px;
+      top: 20px;
+      left: 45px;
+      background: radial-gradient(circle at 30% 20%, #fff, #ff8ac7);
+      border-radius: 50px 50px 10px 10px;
+      transform-origin: 50% 80%;
+      transform: rotate(calc(var(--i) * 45deg));
+      box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+      transition: transform 0.4s ease, filter 0.3s ease;
+    }
+
+    .flower.clicked .petal {
+      transform: rotate(calc(var(--i) * 45deg)) translateY(-4px);
+      filter: brightness(1.05);
+    }
+
+    .center {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle at 30% 20%, #fff9c4, #ffcf33);
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      z-index: 3;
+    }
+
+    .stem {
+      position: absolute;
+      width: 14px;
+      height: 110px;
+      background: linear-gradient(#0b8a3c, #056025);
+      bottom: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 999px;
+    }
+
+    .leaf {
+      position: absolute;
+      width: 60px;
+      height: 30px;
+      background: radial-gradient(circle at 0% 50%, #b6f7c1, #1fa54d);
+      border-radius: 40px 40px 40px 0;
+      top: 30px;
+      transform-origin: left center;
+    }
+
+    .leaf.left {
+      left: -40px;
+      transform: rotate(-25deg);
+    }
+
+    .leaf.right {
+      right: -40px;
+      transform: scaleX(-1) rotate(-25deg);
+    }
+
+    .message {
+      margin-top: 2rem;
+      max-width: 320px;
+      text-align: center;
+      font-size: 1rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      backdrop-filter: blur(6px);
+    }
+
+    .hint {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: #555;
+      text-align: center;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <h1>For My Pretty Little Princess 🌷</h1>
+  <p class="subtitle">I love you cutiee</p>
+
+  <div class="flower-wrapper" id="flowerWrapper">
+    <div class="flower" id="flower">
+      <div class="petal" style="--i:0"></div>
+      <div class="petal" style="--i:1"></div>
+      <div class="petal" style="--i:2"></div>
+      <div class="petal" style="--i:3"></div>
+      <div class="petal" style="--i:4"></div>
+      <div class="petal" style="--i:5"></div>
+      <div class="petal" style="--i:6"></div>
+      <div class="petal" style="--i:7"></div>
+
+      <div class="center">💗</div>
+
+      <div class="stem">
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="message" id="message">
+    BOOBOOO Tap on my flower NALUUUUU 🌸
+  </div>
+  <div class="hint">All for you my dear.</div>
+
+  <script>
+    const messages = [
+      "<b>Petal 1:</b> I am so eternally greatful for you babaluuu.",
+      "<b>Petal 2:</b> I miss you so much. We're so close yet so far. I think about you so often my baby and can't help but wonder why I can't just teleport over there to give you hugs, kisses and love that would make both our hearts melt.",
+      "<b>Petal 3:</b> You are not only my girlfriend, you are my daughter, you are my best friend, you are my solemate, and you are my everything and I will never give up on you, no matter how many times you think I may breakup with you. Take my hand baba. Its alright. I will hold your precious warm hands forever. Whenever you feel cold, I'll always be there to warm them up.",
+      "<b>Petal 4:</b> I never imagined someone staying with me through my worst, but you have done all of that and I am so shocked. I really get emotional over the fact that I've quite literally never experienced something like this ever in my life. I am forever thankful for the times you stuck by me, no matter how much of a wreak I was. Through every dispute you really did everything to help me stay alive and find purpose in life.",
+      "<b>Petal 5:</b> Although, I wanted to send you a real flower, I'm really sorry baba. I really didn't know how I was supposed to deliver them to you especially when you were on semester ending holidays. I hope you like it. It's not that great I know. I had lots of trouble aligning the Lilly.",
+      "<b>Petal 6:</b> Baby, you are such a beauty to look at. You are a perfect mixture of sweet and bitchy but I love it. I can relate to you in so many ways, but if you think those are the only three reasons I love you, that couldn't be further from the truth. I also love you because I can see a future with you. A future of love and fun adventures. I see you through the bad and good times. No matter what, if I were to choose a person to be with for the rest of my life weather its a friend or you, I'd choose you without hesitation, every single time.",
+      "<b>Petal 7</b>: You will forever be my one and only dance partner, in person or in spirit. I miss my dance partner so much. We had such a blast and I'd do anything to get any little moment of that back. I loved acting like cringed out idiots that danced the night away. For a shy person like me, I never thought I'd see myself this active or talkitive before. Not like this especially. That was the first and only time I've ever couldn't care less about another persons opinion.",
+      "<b>Petal 8:</b> In my Lilly, there are 8 flowers, and I love you infinatly more than my Lilly could show you. 💐"
+    ];
+
+    let index = 0;
+    const msgEl = document.getElementById("message");
+    const flower = document.getElementById("flower");
+    const wrapper = document.getElementById("flowerWrapper");
+
+    function changeMessage() {
+      flower.classList.add("clicked");
+
+      // Show HTML formatting properly (bold works)
+      msgEl.innerHTML = messages[index];
+
+      index = (index + 1) % messages.length;
+
+      setTimeout(() => {
+        flower.classList.remove("clicked");
+      }, 350);
+    }
+
+    // Works on mouse + touch
+    wrapper.addEventListener("pointerdown", changeMessage);
+  </script>
+</body>
+</html>
